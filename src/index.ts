@@ -1,16 +1,20 @@
-// นำ funtion ใน file lib.ts มาใช้
-//sayhi('Jang');
-//mport sayhi, { adminName } from "./lib";
-//import { register } from "./lib";
+// command i ขึ้น co-pilot
+//typescript
+import express from 'express'
 
-//register(); //คำสั่งใน import จะเปลี่ยนไปตาม function import
-//  No defualt ใส่ {}
-// import ของที่ exportจากไฟล์ทั่วไป ชื่อต้องตรง และอยู่ใน {} เท่านั้น
-// export มาเปลี่ยนชื่อได้
-//console.log(adminName);
+// const คือตัวแปร
+const app = express();
+const port = 3000;
 
-//console.log('Hello, TypeScript with Node.js!');
+// เรียกใช้ function
+//1.กำหนด URL 
+// 1.1 / ถ้าเข้ามา URL นี้ให้ return hello
+app.get('/', function(request, response) {
+    response.send('hello')
+    
+})
 
-//import ค่า sum plus 2 ตัวในไฟล์ lip
-import { summary } from "./lib";
-console.log(summary(15, 40));
+// 1.2 ฟัง request
+app.listen(port, ()=>{
+console.log('http://localhost:' + port);
+})
